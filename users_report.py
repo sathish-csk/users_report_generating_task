@@ -12,7 +12,7 @@ def get_followers_details(login):
     followers_details = requests.get(f'https://api.github.com/users/{login}/followers').json()
     return followers_details
 
-def git_all_user_details():
+def get_all_user_details():
     user_details=requests.get(f'https://api.github.com/users').json()
     return user_details
 
@@ -25,7 +25,7 @@ def upload_file_to_drive():
     file.Upload()
 
 
-all_user_details = git_all_user_details()
+all_user_details = get_all_user_details()
 rows = []
 for user in all_user_details:
     if user["id"]%10==0:
